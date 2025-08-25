@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 4 Assignment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="headerContent">
+                <h1>Will's Coffee Shop</h1>
+                <p class="para">Daily Dose of Happiness in a Cup</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <div class="navContainer">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Will's Coffee Shop logo" >
+                    Menu
+                </div>
+                <div class="mobileMenu" onclick="toggleMobileMenu()">
+                    <div class="hamburger"></div>
+                    <div class="hamburger"></div>
+                    <div class="hamburger"></div>
+                </div>
+                <ul class="navList" id="navList">
+                    <li><a href="#home" class="navLink">Home</a></li>
+                    <li><a href="#menu" class="navLink">Menu</a></li>
+                    <li><a href="#gallery" class="navLink">Gallery</a></li>
+                    <li><a href="#order" class="navLink">Order</a></li>
+                    <li><a href="#contact" class="navLink">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="mainGrid">
+            <div class="contentArea">
+                <section class="section" id="home">
+                    <h2 class="sectionTitle">Our Best Selling Brews</h2>
+                    <div class="coffeeCard">
+                        <h3>Rich Espresso</h3>
+                        <p>Made from premium organic beans, our espressos delivers a bold, intense flavor that coffee purists love.</p>
+                    </div>
+                    <div class="coffeeCard">
+                        <h3>Creamy Cappuccino</h3>
+                        <p>Silky steamed milk topped with reach cocoa powder creates the perfect balance of coffee and comfort.</p>
+                    </div>
+                    <div class="coffeeCard">
+                        <h3>Iced Vanilla Latte</h3>
+                        <p>Cool, refreshing, and perfectly sweetened with natural vanilla - ideal for warmer days.</p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="menuSection">
+                <section class="section" id="menu">
+                    <h2 class="sectionTitle">Menu & Prices</h2>
+                    <div style="overflow-x: auto;">
+                        <table class="menuTable">
+                            <thead>
+                                <tr>
+                                    <th>Beverage</th>
+                                    <th>Size</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Espresso</td>
+                                    <td>Small</td>
+                                    <td>R15.50</td>
+                                </tr>
+                                <tr>
+                                    <td>Cappuccino</td>
+                                    <td>Small</td>
+                                    <td>R20.50</td>
+                                </tr>
+                                <tr>
+                                    <td>Cappuccino</td>
+                                    <td>Medium</td>
+                                    <td>R25.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Cappuccino</td>
+                                    <td>Large</td>
+                                    <td>R29.50</td>
+                                </tr>
+                                <tr>
+                                    <td>Latte</td>
+                                    <td>Small</td>
+                                    <td>R21.50</td>
+                                </tr>
+                                <tr>
+                                    <td>Latte</td>
+                                    <td>Medium</td>
+                                    <td>R25.50</td>
+                                </tr>
+                                <tr>
+                                    <td>Latte</td>
+                                    <td>Large</td>
+                                    <td>R30.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+
+            <div class="gallerySection">
+                <section class="section" id="gallery">
+                    <h2 class="sectionTitle">Coffee Gallery</h2>
+                    <div class="galleryGrid">
+                        <div class="galleryItem"><img src="images/cappuccino.jpg" alt="Cappuccino"></div>
+                        <div class="galleryItem"><img src="images/espresso.jpg" alt="Espresso"></div>
+                        <div class="galleryItem"><img src="images/Iced_Latte.jpg" alt="Latte"></div>
+                        <div class="galleryItem"><img src="images/coffees.jpg" alt="Coffee Beans"></div>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="sidebar">
+                <h3>Quick Order</h3>
+                <p>Skip the line! Order ahead for pickup.</p>
+                <a href="#order" class="btn" style="width: 100%; text-align: center; margin: 1rem 0;">Order Now</a>
+
+                <h3 style="margin-top: 2rem;">Store Hours</h3>
+                <ul style="list-style: none; margin-top: 1rem;">
+                    <li><strong>Mon-Fri</strong> 6:00 AM - 8:00 PM</li>
+                    <li><strong>Saturday</strong> 7:00 AM - 9:00 PM</li>
+                    <li><strong>Sunday</strong> 8:00 AM - 6:00 PM</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem;">Contacts</h3>
+                <p>Oslo Street, Johannesburg</p>
+                <p> 065-821-9799</p>
+                <p>info@willscoffee.co.za</p>
+            </aside>
+        </div>
+
+        <section class="section" id="order">
+            <h2 class="sectionTitle">Place Your Order</h2>
+            <div class="formContainer">
+                <form>
+                    <div class="formGrid">
+                        <div class="formGroup">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="inputField" placeholder="John Doe" required>
+                        </div>
+                        <div class="formGroup">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="inputField" placeholder="johndoe@example.com" required>
+                        </div>
+                        <div class="formGroup">
+                            <label for="phone">Phone Numbers</label>
+                            <input type="tel" id="phone" name="phone" class="inputField" placeholder="0824585965" required>
+                        </div>
+                        <div class="formGroup">
+                            <label for="coffee">Coffee Type</label>
+                            <select id="coffee" name="coffee" class="inputField" required>
+                                <option value="">Select Coffee</option>
+                                <option value="espresso">Espresso</option>
+                                <option value="cappuccino">Cappuccino</option>
+                                <option value="latte">Latte</option>
+                            </select>
+                        </div>
+                        <div class="formGroup">
+                            <label>Size</label>
+                            <div class="radioGroup">
+                                <label>
+                                    <input type="radio" name="size" value="small" required> Small
+                                </label>
+                                <label>
+                                    <input type="radio" name="size" value="medium" required> Medium
+                                </label>
+                                <label>
+                                    <input type="radio" name="size" value="large" required> Large
+                                </label>
+                            </div>
+                        </div>
+                        <div class="formGroup">
+                            <label>Extras</label>
+                            <div class="checkboxGroup">
+                                <label>
+                                    <input type="checkbox" name="extras" value="whipped"> Whipped Cream
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="extras" value="shot"> Extra Shot
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="extras" value="iced"> Make it Iced
+                                </label>
+                            </div>
+                        </div>
+                        <div class="formGroupFullWidth">
+                            <label for="instructions">Special Instructions</label>
+                            <textarea id="instructions" name="instructions" class="inputField" rows="3" placeholder="Any special requests... "></textarea>
+                        </div>
+                    </div>
+                    <div class="formActions">
+                        <button type="reset" class="btn" style="background-color: #666;">Reset</button>
+                        <button type="submit" class="btn">Place Order</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+
+    <script>
+        function toggleMobileMenu() {
+            const navList = document.getElementById('navList');
+            navList.classList.toggle('active')
+        }
+    </script>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Will's Coffee Shop | Daily Dose of Happiness in a Cup</p>
+        </div>
+    </footer>
+</body>
+</html>

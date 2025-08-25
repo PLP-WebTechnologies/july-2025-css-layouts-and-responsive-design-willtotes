@@ -1,0 +1,357 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f4f0;
+}
+
+h1{
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+h2{
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+h3{
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+    max-width: 220px;
+    border-radius: 8px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    filter: brightness(1.1) contrast(1.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo img:hover{
+    transform: scale(1.05);
+    filter: brightness(1.2) contrast(1.2);
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.btn{
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #8b4513;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover{
+    background-color: #654321;
+    transform: translateY(-2px);
+}
+
+.header{
+    background: linear-gradient(135deg, #8b4513, #a0522d);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: url(images/header.png) repeat;
+    animation: float 2s ease-in-out infinite;
+    background-size: 100px 100px;
+    opacity: 0.15;
+    z-index: 1;
+}
+
+.headerContent{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.para{
+    font-style: italic;
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+@keyframes float{
+    0% {transform: translate(-50%, -50%) rotate(0deg);}
+    100% {transform: translate(-50%, -50%) rotate(360deg);}
+}
+
+.nav{
+    background-color: #654321;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.navList{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.navLink{
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.navLink:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.mobileMenu{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 3px;
+}
+
+.hamburger{
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s;
+}
+
+.mainGrid{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+        "content sidebar"
+        "menu sidebar"
+        "gallery sidebar";
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.contentArea{
+    grid-area: content;
+}
+
+.menuSection{
+    grid-area: menu;
+}
+
+.gallerySection{
+    grid-area: gallery;
+}
+
+.sidebar{
+    grid-area: sidebar;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.section{
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.section:hover{
+    transform: translateY(-5px);
+}
+
+.sectionTitle{
+    color: #8b4513;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #8b4513;
+}
+
+.coffeeCard{
+    flex: 1;
+    min-width: 250px;
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #8b4513;
+    transition: all 0.3s ease;
+}
+
+.coffeeCard:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.coffeeCard h3{
+    color: #8b4513;
+    margin-bottom: 0.5rem;
+}
+
+.menuTable{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    overflow-x: auto;
+}
+
+.menuTable th, .menuTable td{
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.menuTable th{
+    background-color: #8b4513;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+.menuTable tr:hover{
+    background-color: #f5f5f5;
+}
+
+.galleryGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.galleryItem{
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 1;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formContainer{
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.formGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.formGroup{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formGroupFullWidth{
+    grid-column: 1 / -1;
+}
+
+.inputField{
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.inputField:focus{
+    outline: none;
+    border-color: #8b4513;
+}
+
+.radioGroup, .checkboxGroup{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.formActions{
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.footer{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .navList{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #654321;
+        padding: 1rem;
+    }
+
+    .navList.active{
+        display: flex;
+    }
+
+    .mobileMenu{
+        display: flex;
+    }
+
+    .navList{
+        gap: 1rem;
+    }
+}
